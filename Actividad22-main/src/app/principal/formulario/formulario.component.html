@@ -1,0 +1,66 @@
+<section class="container mt-4">
+    <form class="form-group" (submit)="onSubmit()">
+      <section class="form-group">
+        <label for="firstname">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstname"
+          name="name"
+          [(ngModel)]="nombre"
+          [ngStyle]="{ 'border-color': nombreValid===false? 'red' : 'blue' }"
+        />
+        <p *ngIf="nombreValid === false" class="text-danger">
+          El nombre no valido
+        </p>
+      </section>
+      <section class="form-group">
+        <label for="lastname">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastname"
+          name="ape"
+          [(ngModel)]="apellido"
+          [ngStyle]="{ 'border-color': apellidoValid === false ? 'red' : 'blue' }"
+        />
+        <p *ngIf="apellidoValid === false" class="text-danger">
+          El apellido no valido
+        </p>
+      </section>
+      <section class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="user"
+          [(ngModel)]="user"
+          [ngStyle]="{ 'border-color': userValid === false ? 'red' : 'blue' }"
+        />
+        <p *ngIf="userValid === false" class="text-danger">
+          El usuario no valido
+        </p>
+      </section>
+      <section class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="pass"
+          [(ngModel)]="pass"
+          [ngStyle]="{ 'border-color': passValid === false ? 'red' : 'blue' }"
+        />
+        <p *ngIf="passValid === false" class="text-danger">
+          La contraseña no valida
+        </p>
+      </section>
+      <br>
+      <section class="form-group text-center">
+        <button [disabled]="!pass" class="btn btn-primary m-2" type="submit">
+          Register
+        </button>
+      </section>
+    </form>
+  </section>
